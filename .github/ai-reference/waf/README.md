@@ -6,7 +6,8 @@ the relevant pillar in specs and plans.
 
 ## Why a local folder instead of an MCP filesystem server?
 
-`docs/waf/` is inside the workspace, so the agent already has read access via
+`.github/ai-reference/waf/` is inside the workspace, so the agent already has
+read access via
 its native file tools. A filesystem MCP server here would add process overhead
 and tool-surface clutter without adding capability. Read-only intent is enforced
 by restricting the `architect`/`planner` agents' `tools:` to read/search.
@@ -18,7 +19,7 @@ external source (that's what `context7` and `microsoft-learn` are for in
 ## Layout
 
 ```
-docs/waf/
+.github/ai-reference/waf/
 ├── README.md          # this file
 └── pillars/
     ├── reliability.md

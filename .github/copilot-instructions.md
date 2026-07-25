@@ -41,7 +41,7 @@ Cite the pillar(s) you are optimizing for and what you are trading away.
 ## Authoritative-source discipline
 
 - Prefer official documentation over memory. Use connected documentation MCP
-  servers and the project's own docs/skills before asserting an API.
+  servers and the project's own AI references/skills before asserting an API.
 - When you state an API signature, function name, or config key, it must come
   from a source you verified this session — not a guess.
 - Link the source in the spec/plan so reviewers can audit the reasoning.
