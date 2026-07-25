@@ -38,8 +38,9 @@ read-only — it researches and recommends, never edits.
 > Architect: We need to publish a multi-year stream-chemistry CSV to EDI.
 > Compare options for generating the EML and recommend one.
 
-It returns options scored against `docs/waf/pillars/`, a recommendation, and
-sources. Skip this for small, obvious tasks and go straight to `/spec`.
+It returns options scored against `.github/ai-reference/waf/pillars/`, a
+recommendation, and sources. Skip this for small, obvious tasks and go straight
+to `/spec`.
 
 ### 2. Specify
 Run the prompt; it writes `specs/<slug>/spec.md`, then stop to review.
@@ -109,19 +110,19 @@ You don't need a separate template — the analysis path just loads
 | `instructions/r-style`, `python-style` | Editing matching files (`applyTo`) | Tooling/linters change |
 | `instructions/eml-metadata` | EML/EDI task detected | EDI workflow changes |
 | `instructions/analysis` | Analysis/modeling task | Pipeline conventions change |
-| `instructions/well-architected` | Design decision; points to `docs/waf/` | New pillar guidance |
+| `instructions/well-architected` | Design decision; points to `.github/ai-reference/waf/` | New pillar guidance |
 | `prompts/spec.md` (`/spec`), `plan.md` (`/plan`) | You invoke them | Spec/plan structure changes |
 | `agents/Architect` (read-only) | Up-front design/research | Model or tools change |
 | `agents/Planner` (read-only) | Spec → plan | Plan format changes |
 | `skills/eml-metadata/` | Building/validating EML | Schema/EDI/ROpenSci updates |
-| `docs/waf/pillars/` | Cited during Architect/spec | Refine checklists |
+| `.github/ai-reference/waf/pillars/` | Cited during Architect/spec | Refine checklists |
 | `specs/` | Source of truth read at implement | Per task (its content) |
 | `.vscode/mcp.json` | Live external docs (context7, MS Learn) | Add doc sources |
 | `.github/CHANGELOG.md` | Reference for prior decisions | Every model change |
 
-**Don't** wrap in-workspace folders (`docs/waf`, `specs`) in filesystem MCP
-servers — the agent reads them natively; read-only is enforced via agent `tools:`.
-Use MCP only for live/external docs.
+**Don't** wrap in-workspace folders (`.github/ai-reference/waf`, `specs`) in
+filesystem MCP servers — the agent reads them natively; read-only is enforced
+via agent `tools:`. Use MCP only for live/external docs.
 
 ## PostgreSQL workflow (recommended)
 
@@ -145,6 +146,7 @@ operations in VS Code.
 
 ## Reuse across projects
 
-Lift the language-agnostic base (instructions, agents, prompts, `docs/waf`) into
-your user profile so it roams; keep domain skills (`eml-metadata`) and `specs/`
-in-repo. See `specs/README.md` and `specs/eml-stream-chemistry/` for a worked example.
+Lift the language-agnostic base (instructions, agents, prompts,
+`.github/ai-reference/waf`) into your user profile so it roams; keep domain
+skills (`eml-metadata`) and `specs/` in-repo. See `specs/README.md` and
+`specs/eml-stream-chemistry/` for a worked example.
